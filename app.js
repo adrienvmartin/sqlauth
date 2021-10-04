@@ -1,13 +1,14 @@
 const express = require('express');
 const mysql = require('mysql');
+const config = require('./dbconfig');
 
 const app = express();
 
 const db = mysql.createConnection({
-  host: 'localhost:3306',
-  user: 'root',
-  password: '',
-  database: 'node_login'
+  host: config.HOST,
+  user: config.USER,
+  password: config.PASSWORD,
+  // database: 'node_login'
 });
 
 db.connect((error) => {
